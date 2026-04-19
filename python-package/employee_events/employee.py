@@ -70,4 +70,3 @@ class Employee(QueryBase):
                 USING({self.name}_id)
             WHERE {self.name}.{self.name}_id = {id}
         """)
-        

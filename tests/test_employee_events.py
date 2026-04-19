@@ -13,7 +13,7 @@ project_root = Path(__file__).resolve().parents[1]
 def db_path():
     # Using the `project_root` variable
     # return a pathlib object for the `employee_events.db` file
-    return project_root / "python-package" / "employee_events" / "employee_events.db" # noqa: E501
+    return project_root / "python-package" / "employee_events" / "employee_events.db"  # noqa: E501
 
 
 # Define a function called

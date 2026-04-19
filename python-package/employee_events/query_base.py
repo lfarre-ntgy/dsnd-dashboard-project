@@ -64,4 +64,3 @@ class QueryBase(QueryMixin):
             WHERE {self.name}.{self.name}_id = {id}
         """
         return self.pandas_query(sql_query)
-        

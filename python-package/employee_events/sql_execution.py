@@ -55,4 +55,3 @@ def query(func):
         return result
 
     return run_query
-    

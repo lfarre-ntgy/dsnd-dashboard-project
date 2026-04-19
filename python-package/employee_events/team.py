@@ -71,4 +71,4 @@ class Team(QueryBase):
                 GROUP BY employee_id
             )
         """)
-        
+ 
