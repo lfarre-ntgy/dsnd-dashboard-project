@@ -1,6 +1,7 @@
 # Import any dependencies needed to execute sql queries
 from .sql_execution import QueryMixin
 
+
 # Define a class called QueryBase
 # Use inheritance to add methods
 # for querying the employee_events database.
@@ -13,10 +14,9 @@ class QueryBase(QueryMixin):
     # Define a `names` method that receives
     # no passed arguments
     def names(self):
-        
+
         # Return an empty list
         return []
-
 
     # Define an `event_counts` method
     # that receives an `id` argument
@@ -44,9 +44,6 @@ class QueryBase(QueryMixin):
         """
         return self.pandas_query(sql_query)
 
-            
-    
-
     # Define a `notes` method that receives an id argument
     # This function should return a pandas dataframe
     def notes(self, id):
@@ -67,5 +64,4 @@ class QueryBase(QueryMixin):
             WHERE {self.name}.{self.name}_id = {id}
         """
         return self.pandas_query(sql_query)
-
-
+        

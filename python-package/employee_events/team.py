@@ -4,6 +4,7 @@ from .query_base import QueryBase
 # Import dependencies for sql execution
 from .sql_execution import query
 
+
 # Create a subclass of QueryBase
 # called  `Team`
 class Team(QueryBase):
@@ -12,14 +13,13 @@ class Team(QueryBase):
     # to the string "team"
     name = "team"
 
-
     # Define a `names` method
     # that receives no arguments
     # This method should return
     # a list of tuples from an sql execution
     @query
     def names(self):
-        
+
         # Query 5
         # Write an SQL query that selects
         # the team_name and team_id columns
@@ -30,7 +30,6 @@ class Team(QueryBase):
                    team_id
             FROM team
         """
-    
 
     # Define a `username` method
     # that receives an ID argument
@@ -51,7 +50,6 @@ class Team(QueryBase):
             WHERE team_id = {id}
         """
 
-
     # Below is method with an SQL query
     # This SQL query generates the data needed for
     # the machine learning model.
@@ -63,13 +61,14 @@ class Team(QueryBase):
 
         return self.pandas_query(f"""
             SELECT positive_events, negative_events FROM (
-                    SELECT employee_id
-                         , SUM(positive_events) positive_events
-                         , SUM(negative_events) negative_events
-                    FROM {self.name}
-                    JOIN employee_events
-                        USING({self.name}_id)
-                    WHERE {self.name}.{self.name}_id = {id}
-                    GROUP BY employee_id
-                   )
-                """)
+                SELECT employee_id,
+                       SUM(positive_events) positive_events,
+                       SUM(negative_events) negative_events
+                FROM {self.name}
+                JOIN employee_events
+                    USING({self.name}_id)
+                WHERE {self.name}.{self.name}_id = {id}
+                GROUP BY employee_id
+            )
+        """)
+        
