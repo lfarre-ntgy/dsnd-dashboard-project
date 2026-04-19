@@ -5,7 +5,7 @@
 per-file-ignores =
 
     # Base / framework code (do not modify)
-    report/base_components/*.py: E302,E303,W293,W292,E501,E225,E231,E111,F901
+    report/base_components/*.py: E302,E303,W391, W293,W292,W291, E501,E225,E231,E111,F901
 
     # Combined components (inherited indentation and whitespace)
     report/combined_components/*.py: F401,E302,E303,W293,W292,E111
@@ -14,7 +14,7 @@ per-file-ignores =
     report/dashboard.py: F401,F403,F405,F811,E501,E304,E116
 
     # Asset generation scripts (not part of runtime code)
-    src/build_project_assets.py: E401,F401,E302,E251,E203,E225,E231,E731,E501,W291,W293,W292
+    src/build_project_assets.py: E401,F401,E303, E302,E251,E203,E225,E231,E731,E501,W291,W293,W292
 
     # Minor utilities
     src/utils.py: W291
