@@ -92,3 +92,24 @@ A `.flake8` file is included to configure project-specific linting rules.
 Some files included as **framework or starter code** are not meant to be modified.  
 These include **FastHTML components that require `import *`**, **embedded JavaScript blocks**, and **auxiliary scripts not used at runtime**.  
 Such files are explicitly **ignored via per-file rules in `.flake8`**, while project-specific code remains linted
+
+## Setup and Execution
+
+Create and activate a virtual environment:
+
+```bash
+python -m venv venv
+source venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the dashboard:
+
+```bash
+python report/dashboard.py
+```
