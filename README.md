@@ -19,6 +19,7 @@ This repository contains starter code for the **Software Engineering for Data Sc
 │   │   ├── sql_execution.py
 │   │   └── team.py
 │   ├── requirements.txt
+│   ├── README.md
 │   ├── setup.py
 ├── report
 │   ├── base_components
@@ -37,7 +38,8 @@ This repository contains starter code for the **Software Engineering for Data Sc
 ├── requirements.txt
 ├── start
 ├── tests
-    └── test_employee_events.py
+│   └── test_employee_events.py
+├── .flake8 
 ```
 
 ### employee_events.db
@@ -79,3 +81,14 @@ erDiagram
   employee ||--o{ employee_events : "employee_id"
   notes }o--o{ employee_events : ""
 ```
+
+### Repository structure updates
+
+`python-package/README.md` is included to satisfy setuptools packaging requirements when building the source distribution.  
+A `.flake8` file is included to configure project-specific linting rules.
+
+### Linting note
+
+Some files included as **framework or starter code** are not meant to be modified.  
+These include **FastHTML components that require `import *`**, **embedded JavaScript blocks**, and **auxiliary scripts not used at runtime**.  
+Such files are explicitly **ignored via per-file rules in `.flake8`**, while project-specific code remains linted
