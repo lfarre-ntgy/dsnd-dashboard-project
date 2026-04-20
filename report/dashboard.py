@@ -7,7 +7,7 @@ from employee_events.employee import Employee
 from employee_events.team import Team
 
 # import the load_model function from the utils.py file
-from report.utils import load_model
+from utils import load_model
 
 """
 Below, we import the parent classes
