@@ -108,6 +108,11 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
+Install the local package:
+```bash
+pip install -e python-package
+```
+
 Run the dashboard:
 
 ```bash
